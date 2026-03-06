@@ -17,6 +17,8 @@ A banking application project demonstrating **build automation, continuous integ
 
 This project demonstrates how a **banking application can be integrated with a CI/CD pipeline** to automate software development workflows.
 
+The repository also includes generated HTML reports from testing and mutation analysis tools such as PIT.
+
 The pipeline automates key stages of the development lifecycle including:
 
 * build automation
@@ -83,11 +85,15 @@ The project demonstrates how automated CI pipelines help:
 ```
 banking-devops-pipeline/
 │
-├── src/                 # Application source code
-├── test/                # Unit tests
-├── build.xml            # Apache Ant build configuration
-├── Jenkinsfile          # Jenkins pipeline definition
-└── README.md
+├── demo1/
+│   ├── src/          # Java source code
+│   ├── junitest/     # JUnit test cases
+│   ├── reports/      # Generated reports (PIT, SpotBugs, etc.)
+│   ├── build.xml     # Apache Ant build configuration
+│   └── Jenkinsfile   # Jenkins pipeline configuration
+│
+├── README.md
+
 ```
 
 ---
