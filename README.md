@@ -164,7 +164,8 @@ banking-devops-pipeline/
 
 ## Author
 
-**Rutuja Deshmukh**
+Rutuja Deshmukh
+
 MSc Informatik — Germany
 
 ---
