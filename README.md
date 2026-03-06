@@ -10,6 +10,7 @@ A banking application project demonstrating **build automation, continuous integ
 ![CI](https://img.shields.io/badge/CI-Jenkins-red)
 ![Testing](https://img.shields.io/badge/Testing-JUnit%205-yellow)
 ![Static Analysis](https://img.shields.io/badge/Static%20Analysis-SpotBugs-blueviolet)
+![Mutation Testing](https://img.shields.io/badge/Mutation%20Testing-PIT-purple)
 
 ---
 
@@ -17,7 +18,7 @@ A banking application project demonstrating **build automation, continuous integ
 
 This project demonstrates how a **banking application can be integrated with a CI/CD pipeline** to automate software development workflows.
 
-The repository also includes generated HTML reports from testing and mutation analysis tools such as PIT.
+The repository also includes **generated HTML reports** from testing and mutation analysis tools such as **PIT**.
 
 The pipeline automates key stages of the development lifecycle including:
 
@@ -30,6 +31,41 @@ By integrating these practices, the project improves **code quality, reliability
 
 ---
 
+## CI Pipeline Workflow
+
+```
+Developer Push
+      │
+      ▼
+   Jenkins Pipeline
+      │
+      ▼
+   Clean Stage
+(delete previous builds)
+      │
+      ▼
+   Build Stage
+(Apache Ant compilation)
+      │
+      ▼
+   Test Stage
+(JUnit test execution)
+      │
+      ▼
+ Mutation Testing
+      (PIT)
+      │
+      ▼
+ Static Code Analysis
+     (SpotBugs)
+      │
+      ▼
+  Reports Generated
+(HTML reports in demo1/reports/)
+```
+
+---
+
 ## Technologies Used
 
 * **Java**
@@ -37,34 +73,52 @@ By integrating these practices, the project improves **code quality, reliability
 * **Git** – version control
 * **Jenkins** – continuous integration pipeline
 * **JUnit 5** – unit testing
-* **PIT Mutation Testing** – testing effectiveness
+* **PIT Mutation Testing** – evaluating test effectiveness
 * **SpotBugs** – static code analysis
 
 ---
 
-## Continuous Integration Pipeline
+## CI Pipeline Stages
 
 The Jenkins pipeline automates the following stages:
 
-### Clean
+### 1. Clean
 
-Removes previously compiled files and prepares a clean build environment.
+Removes compiled artifacts and resets the workspace.
 
-### Build
+### 2. Build
 
-Compiles the application source code using **Apache Ant build targets**.
+Compiles Java source code using **Apache Ant**.
 
-### Test
+### 3. Test
 
-Runs the **JUnit 5 test suite** to verify application functionality.
+Executes **JUnit test cases** to verify application functionality.
 
-### Mutation Testing
+### 4. Mutation Testing
 
-Executes **PIT mutation testing** to evaluate how effective the unit tests are in detecting faults.
+Uses **PIT (Pitest)** to evaluate the effectiveness of the test suite.
 
-### Static Code Analysis
+### 5. Static Code Analysis
 
-Runs **SpotBugs** to detect potential bugs, performance issues, and security vulnerabilities in the codebase.
+**SpotBugs** scans the code for potential defects and security issues.
+
+### 6. Report Generation
+
+Generates **HTML reports** for test results and mutation coverage.
+
+---
+
+## Testing Metrics
+
+Mutation testing results generated using **PIT (Pitest)**:
+
+* **Line Coverage:** 60%
+* **Mutation Coverage:** 45%
+* **Test Strength:** 59%
+
+These metrics provide insight into the effectiveness of the unit tests and highlight opportunities for improving test coverage.
+
+Detailed HTML reports can be found in the **`demo1/reports/`** directory.
 
 ---
 
@@ -93,7 +147,6 @@ banking-devops-pipeline/
 │   └── Jenkinsfile   # Jenkins pipeline configuration
 │
 ├── README.md
-
 ```
 
 ---
@@ -111,7 +164,7 @@ banking-devops-pipeline/
 
 ## Author
 
-Rutuja Deshmukh
+**Rutuja Deshmukh**
 MSc Informatik — Germany
 
 ---
