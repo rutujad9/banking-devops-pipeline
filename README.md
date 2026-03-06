@@ -4,6 +4,7 @@ A banking application project demonstrating **build automation, continuous integ
 
 ---
 
+![CI Pipeline](https://img.shields.io/badge/CI-Jenkins%20Pipeline-success)
 ![Java](https://img.shields.io/badge/Java-JDK-blue)
 ![DevOps](https://img.shields.io/badge/DevOps-CI%2FCD-green)
 ![Build Tool](https://img.shields.io/badge/Build-Apache%20Ant-orange)
@@ -31,7 +32,7 @@ By integrating these practices, the project improves **code quality, reliability
 
 ---
 
-## CI Pipeline Workflow
+## 🔄 CI Pipeline Workflow
 
 ```
 Developer Push
@@ -108,7 +109,7 @@ Generates **HTML reports** for test results and mutation coverage.
 
 ---
 
-## Testing Metrics
+## 📊 Testing Metrics
 
 Mutation testing results generated using **PIT (Pitest)**:
 
